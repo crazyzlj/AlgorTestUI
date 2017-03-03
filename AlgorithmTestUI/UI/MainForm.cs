@@ -13,18 +13,20 @@ using System.IO;
 using System.Web.Services;
 using System.Threading;
 using System.Diagnostics;
+using PopupControl;
+using MoreComplexPopup;
 
-namespace TestDemo
+namespace AlgorithmTest
 {
     public partial class MainForm : Form
     {
         //public System.Windows.Forms.MdiClient m_MdiClient;
-        private TestDemo.SelectCoresFrm child;
-        private TestDemo.HelpMessage child2;
-        private TestDemo.FormWuhui_calibration child3;
-        private TestDemo.Hydrograph childHydro;
-        private TestDemo.FormPareto childPareto;
-        private TestDemo.SubProc childSubProc;
+        private AlgorithmTest.SelectCoresFrm child;
+        private AlgorithmTest.HelpMessage child2;
+        private AlgorithmTest.FormWuhui_calibration child3;
+        private AlgorithmTest.Hydrograph childHydro;
+        private AlgorithmTest.FormPareto childPareto;
+        private AlgorithmTest.SubProc childSubProc;
         //protected BackgroundWorker worker = new BackgroundWorker();
         //protected int SelectedCoreNum = 0;
         bool downFlag = false;  // False : Download Spatial Analysis Files and HydroModeling Files on LINUX Server; True: Download HydroModeling Files on Windows Server.
@@ -42,9 +44,9 @@ namespace TestDemo
         public MainForm()
         {
             InitializeComponent();
-            TestDemo.SelectCoresFrm child = new TestDemo.SelectCoresFrm();
+            AlgorithmTest.SelectCoresFrm child = new AlgorithmTest.SelectCoresFrm();
             //child.MdiParent = this;
-            TestDemo.HelpMessage child2 = new TestDemo.HelpMessage();
+            AlgorithmTest.HelpMessage child2 = new AlgorithmTest.HelpMessage();
             //child2.MdiParent = this;
             //int iCnt = this.Controls.Count;
             //for (int i = 0; i < iCnt; i++)
@@ -77,6 +79,11 @@ namespace TestDemo
             //worker.DoWork +=new DoWorkEventHandler(worker_DoWork);
             //worker.ProgressChanged +=new ProgressChangedEventHandler(worker_ProgressChanged);
             //worker.RunWorkerCompleted +=new RunWorkerCompletedEventHandler(worker_RunWorkerCompleted);
+
+            toolTip = new Popup(customizedTip = new CustomToolTip("title", "content"));
+            toolTip.AutoClose = false;
+            toolTip.FocusOnOpen = false;
+            toolTip.ShowingAnimation = toolTip.HidingAnimation = PopupAnimations.Blend;
         }
 
         //#region Code of BackgroundWorker
@@ -567,7 +574,7 @@ namespace TestDemo
         {
             if (child2 == null || child2.IsDisposed)
             {
-                child2 = new TestDemo.HelpMessage();
+                child2 = new AlgorithmTest.HelpMessage();
                 //child2.MdiParent = this;
                 //child2.TopMost = true;
                 child2.Show();
@@ -1177,14 +1184,14 @@ namespace TestDemo
             {
                 if (childSubProc == null || childSubProc.IsDisposed)
                 {
-                    childSubProc = new TestDemo.SubProc();
+                    childSubProc = new AlgorithmTest.SubProc();
                     childSubProc.RunTimeFile = RunTimeFile;
                     childSubProc.Show();
                 }
                 else
                 {
                     childSubProc.Close();
-                    childSubProc = new TestDemo.SubProc();
+                    childSubProc = new AlgorithmTest.SubProc();
                     childSubProc.RunTimeFile = RunTimeFile;
                     childSubProc.Show();
                 }
@@ -1558,7 +1565,7 @@ namespace TestDemo
                             files[3] = CORE[k].ToString() + " Cores : Discharge / m3/s";
                             //if (childHydro == null || childHydro.IsDisposed)
                             //{
-                            childHydro = new TestDemo.Hydrograph();
+                            childHydro = new AlgorithmTest.Hydrograph();
                             childHydro.Files = files;
                             childHydro.Show();
                             //}
@@ -1659,7 +1666,7 @@ namespace TestDemo
                             {
                                 if (Directory.Exists(resultpath + "\\core" + CORE[core].ToString()))
                                 {
-                                    child3 = new TestDemo.FormWuhui_calibration();
+                                    child3 = new AlgorithmTest.FormWuhui_calibration();
                                     string[] paramcali = { CORE[core].ToString(), resultpath + "\\core" + CORE[core].ToString() };
                                     child3.ParamCaliOutputProperty = paramcali;
                                     child3.Show();
@@ -1673,7 +1680,7 @@ namespace TestDemo
                                 
                                 //if (childHydro == null || childHydro.IsDisposed)
                                 //{
-                                childHydro = new TestDemo.Hydrograph();
+                                childHydro = new AlgorithmTest.Hydrograph();
                                 string[] files = new string[4];
                                 files[0] = folderBrowserDialogSpaAn.SelectedPath + "\\input\\prec.txt";
                                 files[1] = folderBrowserDialogSpaAn.SelectedPath + "\\input\\q_true.txt";
@@ -1694,7 +1701,7 @@ namespace TestDemo
 
                                 //if (childHydro == null || childHydro.IsDisposed)
                                 //{
-                                childHydro = new TestDemo.Hydrograph();
+                                childHydro = new AlgorithmTest.Hydrograph();
                                 string[] files = new string[4];
                                 files[0] = folderBrowserDialogSpaAn.SelectedPath + "\\input\\preci_2007.txt";
                                 files[1] = folderBrowserDialogSpaAn.SelectedPath + "\\input\\q_2007_true.txt";
@@ -1726,7 +1733,7 @@ namespace TestDemo
                                 XYInfoPath[curcore*2 + 0] = "cores" + CORE[curcore].ToString();
                                 XYInfoPath[curcore * 2 + 1] = destipath + "\\final_nondom_pop.out";
                             }
-                            childPareto = new TestDemo.FormPareto();
+                            childPareto = new AlgorithmTest.FormPareto();
                             childPareto.XYINFO = XYInfoPath;
                             childPareto.Show();
                         }
@@ -1836,7 +1843,7 @@ namespace TestDemo
         public void MenuRun(ComboxItem CI)
         {
             CORE = null;
-            child = new TestDemo.SelectCoresFrm();
+            child = new AlgorithmTest.SelectCoresFrm();
             if (child.ShowDialog() == DialogResult.OK)
             {
                 CORE = child.Cores;
@@ -2529,7 +2536,7 @@ namespace TestDemo
                 CorrectTime(saveFileFolder + "\\results\\q_1t_" + Cores[i].ToString() + "p");
                 files[2] = saveFileFolder + "\\results\\q_1t_" + Cores[i].ToString() + "pNew";
                 files[3] = "cores" + Cores[i].ToString() + "  Discharge / m3/s";
-                childHydro = new TestDemo.Hydrograph();
+                childHydro = new AlgorithmTest.Hydrograph();
                 childHydro.Files = files;
                 childHydro.Show();
             }
@@ -2563,7 +2570,7 @@ namespace TestDemo
             {
                 files[2] = saveFileFolder + "\\results\\q_1t_" + Cores[i].ToString() + "p";
                 files[3] = "cores" + Cores[i].ToString() + "  Discharge / m3/s";
-                childHydro = new TestDemo.Hydrograph();
+                childHydro = new AlgorithmTest.Hydrograph();
                 childHydro.Files = files;
                 childHydro.Show();
             }
@@ -2613,7 +2620,7 @@ namespace TestDemo
             string RunTimeFile = saveFileFolder + "\\RunTime.txt";
             if (childSubProc == null || childSubProc.IsDisposed)
             {
-                childSubProc = new TestDemo.SubProc();
+                childSubProc = new AlgorithmTest.SubProc();
                 childSubProc.RunTimeFile = RunTimeFile;
                 childSubProc.Show();
             }
@@ -2626,7 +2633,7 @@ namespace TestDemo
             {
                 files[2] = saveFileFolder + "\\output_" + Cores[i].ToString() + "\\1_Q.txt";
                 files[3] = "cores" + Cores[i].ToString() + "  Discharge / m3/s";
-                childHydro = new TestDemo.Hydrograph();
+                childHydro = new AlgorithmTest.Hydrograph();
                 childHydro.Files = files;
                 childHydro.Show();
             }
@@ -2658,7 +2665,7 @@ namespace TestDemo
             string RunTimeFile = saveFileFolder + "\\RunTime.txt";
             if (childSubProc == null || childSubProc.IsDisposed)
             {
-                childSubProc = new TestDemo.SubProc();
+                childSubProc = new AlgorithmTest.SubProc();
                 childSubProc.RunTimeFile = RunTimeFile;
                 childSubProc.Show();
             }
@@ -2671,7 +2678,7 @@ namespace TestDemo
             {
                 files[2] = saveFileFolder + "\\output_" + Cores[i].ToString() + "\\1_Q.txt";
                 files[3] = "cores" + Cores[i].ToString() + "  Discharge / m3/s";
-                childHydro = new TestDemo.Hydrograph();
+                childHydro = new AlgorithmTest.Hydrograph();
                 childHydro.Files = files;
                 childHydro.Show();
             }
@@ -2716,7 +2723,7 @@ namespace TestDemo
             {
                 if (Directory.Exists(saveFileFolder + "\\core" + Cores[core].ToString()))
                 {
-                    child3 = new TestDemo.FormWuhui_calibration();
+                    child3 = new AlgorithmTest.FormWuhui_calibration();
                     string[] paramcali = { Cores[core].ToString(), saveFileFolder + "\\core" + Cores[core].ToString() };
                     child3.ParamCaliOutputProperty = paramcali;
                     child3.Show();
@@ -2745,7 +2752,7 @@ namespace TestDemo
             {
                 if (Directory.Exists(saveFileFolder + "\\core" + Cores[core].ToString()))
                 {
-                    child3 = new TestDemo.FormWuhui_calibration();
+                    child3 = new AlgorithmTest.FormWuhui_calibration();
                     string[] paramcali = { Cores[core].ToString(), saveFileFolder + "\\core" + Cores[core].ToString() };
                     child3.ParamCaliOutputProperty = paramcali;
                     child3.Show();
@@ -2796,7 +2803,7 @@ namespace TestDemo
                     XYInfoPath[c * 2 + 1] = XYInfoPathEX[c * 2 + 1];
                 }
             }
-            childPareto = new TestDemo.FormPareto();
+            childPareto = new AlgorithmTest.FormPareto();
             //string[] XYInfoPath = { "core16", saveFileFolder + "\\core16\\output\\final_nondom_pop.out", "core32", "F:\\863ResultsDataNew\\WatershedModeling\\OptBMPs\\output32\\final_nondom_pop.out" };
             childPareto.XYINFO = XYInfoPath;
             childPareto.Show();
@@ -2861,7 +2868,7 @@ namespace TestDemo
                     XYInfoPath[c * 2 + 1] = XYInfoPathEX[c * 2 + 1];
                 }
             }
-            childPareto = new TestDemo.FormPareto();
+            childPareto = new AlgorithmTest.FormPareto();
             //string[] XYInfoPath = { "core16", saveFileFolder + "\\core16\\output\\final_nondom_pop.out", "core32", "F:\\863ResultsDataNew\\WatershedModeling\\OptBMPs\\output32\\final_nondom_pop.out" };
             childPareto.XYINFO = XYInfoPath;
             childPareto.Show();
@@ -2948,6 +2955,22 @@ namespace TestDemo
         {
             InitialFlag();
             MenuRun(new ComboxItem("离散化", "dis2"));
+        }
+        Popup toolTip;
+        CustomToolTip customizedTip;
+        Point screenPoint = Control.MousePosition;
+
+        private void ToolStripMenuItemConnect2Cluster_MouseLeave(object sender, EventArgs e)
+        {
+            toolTip.Close();
+        }
+
+        private void ToolStripMenuItemConnect2Cluster_MouseEnter(object sender, EventArgs e)
+        {
+            Point curentPt = Control.MousePosition;
+            toolTip = new Popup(new CustomToolTip("测试服务器连接", 
+                "如服务器连接正常，“空间统计”和“流域过程模拟”算法可以实时运行；如果失败，则仅能查看已有运行结果。"));
+            toolTip.Show(curentPt, ToolStripDropDownDirection.BelowRight);
         }
     }
 }

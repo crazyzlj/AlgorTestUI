@@ -8,7 +8,7 @@ using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.SystemUI;
 
-namespace TestDemo
+namespace AlgorithmTest
 {
     /// <summary>
     /// Summary description for CreateNewDocument.

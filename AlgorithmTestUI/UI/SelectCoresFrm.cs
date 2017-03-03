@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TestDemo
+namespace AlgorithmTest
 {
     public partial class SelectCoresFrm : Form
     {

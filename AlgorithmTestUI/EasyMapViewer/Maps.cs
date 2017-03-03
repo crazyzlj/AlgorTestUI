@@ -6,7 +6,7 @@ using ESRI.ArcGIS.Carto;
 using System.Collections;
 using System.Runtime.InteropServices;
 
-namespace TestDemo
+namespace AlgorithmTest
 {
     [Guid("f27d8789-fbbc-4801-be78-0e3cd8fff9d5")]
     [ClassInterface(ClassInterfaceType.None)]

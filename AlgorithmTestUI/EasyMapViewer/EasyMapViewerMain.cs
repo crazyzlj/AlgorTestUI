@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using ESRI.ArcGIS;
 
-namespace TestDemo
+namespace AlgorithmTest
 {
     static class EasyMapViewerMain
     {

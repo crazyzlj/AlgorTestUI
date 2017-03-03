@@ -1,4 +1,4 @@
-﻿namespace TestDemo
+﻿namespace AlgorithmTest
 {
     partial class MainForm
     {
@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1MainMenu = new System.Windows.Forms.MenuStrip();
+            this.ToolStripMenuItemConnect2Cluster = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemSpatialAnalysis = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemPreprocessing = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemRegularization = new System.Windows.Forms.ToolStripMenuItem();
@@ -181,6 +182,7 @@
             // menuStrip1MainMenu
             // 
             this.menuStrip1MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemConnect2Cluster,
             this.ToolStripMenuItemSpatialAnalysis,
             this.ToolStripMenuItemHydroModeling,
             this.空间统计ToolStripMenuItem,
@@ -192,6 +194,14 @@
             this.menuStrip1MainMenu.Size = new System.Drawing.Size(984, 25);
             this.menuStrip1MainMenu.TabIndex = 0;
             this.menuStrip1MainMenu.Text = "menuStrip1";
+            // 
+            // ToolStripMenuItemConnect2Cluster
+            // 
+            this.ToolStripMenuItemConnect2Cluster.Name = "ToolStripMenuItemConnect2Cluster";
+            this.ToolStripMenuItemConnect2Cluster.Size = new System.Drawing.Size(80, 21);
+            this.ToolStripMenuItemConnect2Cluster.Text = "连接服务器";
+            this.ToolStripMenuItemConnect2Cluster.MouseEnter += new System.EventHandler(this.ToolStripMenuItemConnect2Cluster_MouseEnter);
+            this.ToolStripMenuItemConnect2Cluster.MouseLeave += new System.EventHandler(this.ToolStripMenuItemConnect2Cluster_MouseLeave);
             // 
             // ToolStripMenuItemSpatialAnalysis
             // 
@@ -218,21 +228,21 @@
             // ToolStripMenuItemRegularization
             // 
             this.ToolStripMenuItemRegularization.Name = "ToolStripMenuItemRegularization";
-            this.ToolStripMenuItemRegularization.Size = new System.Drawing.Size(152, 22);
+            this.ToolStripMenuItemRegularization.Size = new System.Drawing.Size(124, 22);
             this.ToolStripMenuItemRegularization.Text = "正则化";
             this.ToolStripMenuItemRegularization.Click += new System.EventHandler(this.ToolStripMenuItemRegularization_Click);
             // 
             // ToolStripMenuItemDistriTrans
             // 
             this.ToolStripMenuItemDistriTrans.Name = "ToolStripMenuItemDistriTrans";
-            this.ToolStripMenuItemDistriTrans.Size = new System.Drawing.Size(152, 22);
+            this.ToolStripMenuItemDistriTrans.Size = new System.Drawing.Size(124, 22);
             this.ToolStripMenuItemDistriTrans.Text = "分布转换";
             this.ToolStripMenuItemDistriTrans.Click += new System.EventHandler(this.ToolStripMenuItemDistriTrans_Click);
             // 
             // ToolStripMenuItemDiscretization
             // 
             this.ToolStripMenuItemDiscretization.Name = "ToolStripMenuItemDiscretization";
-            this.ToolStripMenuItemDiscretization.Size = new System.Drawing.Size(152, 22);
+            this.ToolStripMenuItemDiscretization.Size = new System.Drawing.Size(124, 22);
             this.ToolStripMenuItemDiscretization.Text = "离散化";
             this.ToolStripMenuItemDiscretization.Click += new System.EventHandler(this.ToolStripMenuItemDiscretization_Click);
             // 
@@ -255,7 +265,7 @@
             this.大数据ToolStripMenuItem3,
             this.小数据ToolStripMenuItem3});
             this.空间权重矩阵ToolStripMenuItem.Name = "空间权重矩阵ToolStripMenuItem";
-            this.空间权重矩阵ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.空间权重矩阵ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.空间权重矩阵ToolStripMenuItem.Text = "空间权重矩阵";
             this.空间权重矩阵ToolStripMenuItem.Click += new System.EventHandler(this.空间权重矩阵ToolStripMenuItem_Click);
             // 
@@ -279,20 +289,20 @@
             this.大数据ToolStripMenuItem,
             this.小数据ToolStripMenuItem});
             this.moranToolStripMenuItem.Name = "moranToolStripMenuItem";
-            this.moranToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.moranToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.moranToolStripMenuItem.Text = "Moran\'s I";
             // 
             // 大数据ToolStripMenuItem
             // 
             this.大数据ToolStripMenuItem.Name = "大数据ToolStripMenuItem";
-            this.大数据ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.大数据ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.大数据ToolStripMenuItem.Text = "大数据";
             this.大数据ToolStripMenuItem.Click += new System.EventHandler(this.大数据ToolStripMenuItem_Click);
             // 
             // 小数据ToolStripMenuItem
             // 
             this.小数据ToolStripMenuItem.Name = "小数据ToolStripMenuItem";
-            this.小数据ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.小数据ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.小数据ToolStripMenuItem.Text = "小数据";
             this.小数据ToolStripMenuItem.Click += new System.EventHandler(this.小数据ToolStripMenuItem_Click);
             // 
@@ -302,7 +312,7 @@
             this.大数据ToolStripMenuItem1,
             this.小数据ToolStripMenuItem1});
             this.gearyToolStripMenuItem.Name = "gearyToolStripMenuItem";
-            this.gearyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gearyToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.gearyToolStripMenuItem.Text = "Geary\'s C";
             // 
             // 大数据ToolStripMenuItem1
@@ -325,7 +335,7 @@
             this.大数据ToolStripMenuItem2,
             this.小数据ToolStripMenuItem2});
             this.getisGToolStripMenuItem1.Name = "getisGToolStripMenuItem1";
-            this.getisGToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.getisGToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
             this.getisGToolStripMenuItem1.Text = "Getis G";
             // 
             // 大数据ToolStripMenuItem2
@@ -345,14 +355,14 @@
             // 变异函数拟合ToolStripMenuItem
             // 
             this.变异函数拟合ToolStripMenuItem.Name = "变异函数拟合ToolStripMenuItem";
-            this.变异函数拟合ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.变异函数拟合ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.变异函数拟合ToolStripMenuItem.Text = "变异函数拟合";
             this.变异函数拟合ToolStripMenuItem.Click += new System.EventHandler(this.变异函数拟合ToolStripMenuItem_Click);
             // 
             // 时空扫描统计ToolStripMenuItem2
             // 
             this.时空扫描统计ToolStripMenuItem2.Name = "时空扫描统计ToolStripMenuItem2";
-            this.时空扫描统计ToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.时空扫描统计ToolStripMenuItem2.Size = new System.Drawing.Size(148, 22);
             this.时空扫描统计ToolStripMenuItem2.Text = "时空扫描统计";
             this.时空扫描统计ToolStripMenuItem2.Click += new System.EventHandler(this.时空扫描统计ToolStripMenuItem2_Click);
             // 
@@ -1081,7 +1091,7 @@
             // axTChartComputingTime
             // 
             this.axTChartComputingTime.Enabled = true;
-            this.axTChartComputingTime.Location = new System.Drawing.Point(8, 8);
+            this.axTChartComputingTime.Location = new System.Drawing.Point(7, 7);
             this.axTChartComputingTime.Name = "axTChartComputingTime";
             this.axTChartComputingTime.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axTChartComputingTime.OcxState")));
             this.axTChartComputingTime.Size = new System.Drawing.Size(635, 365);
@@ -1309,7 +1319,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 560);
+            this.ClientSize = new System.Drawing.Size(984, 559);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxResultsShow);
@@ -1482,5 +1492,6 @@
         private System.Windows.Forms.ToolStripMenuItem 小数据ToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem 大数据ToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem 小数据ToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemConnect2Cluster;
     }
 }

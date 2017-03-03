@@ -7,7 +7,7 @@ using ESRI.ArcGIS.ADF.BaseClasses;
 using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.Carto;
 
-namespace TestDemo
+namespace AlgorithmTest
 {
     /// <summary>
 

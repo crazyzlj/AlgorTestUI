@@ -7,7 +7,7 @@ using ESRI.ArcGIS.SystemUI;
 using System.Collections;
 using ESRI.ArcGIS.Carto;
 
-namespace TestDemo
+namespace AlgorithmTest
 {
     /// <summary>
     /// This class is used to synchronize a gven PageLayoutControl and a MapControl.

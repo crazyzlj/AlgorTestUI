@@ -7,7 +7,7 @@ using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.Carto;
 using System.Windows.Forms;
 
-namespace TestDemo
+namespace AlgorithmTest
 {
     /// <summary>
     /// Summary description for OpenAttributeTable.

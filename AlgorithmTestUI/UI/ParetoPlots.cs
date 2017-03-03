@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
-namespace TestDemo
+namespace AlgorithmTest
 {
     public partial class FormPareto : Form
     {

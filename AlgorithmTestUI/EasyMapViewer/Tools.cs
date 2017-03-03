@@ -12,7 +12,7 @@ using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.DataSourcesGDB;
 using ESRI.ArcGIS.SystemUI;
 
-namespace TestDemo
+namespace AlgorithmTest
 {
     public class Tools
     {

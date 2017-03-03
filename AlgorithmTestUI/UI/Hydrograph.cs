@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Globalization;
 
-namespace TestDemo
+namespace AlgorithmTest
 {
     public partial class Hydrograph : Form
     {

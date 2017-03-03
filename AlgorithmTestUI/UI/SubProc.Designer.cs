@@ -1,4 +1,4 @@
-﻿namespace TestDemo
+﻿namespace AlgorithmTest
 {
     partial class SubProc
     {

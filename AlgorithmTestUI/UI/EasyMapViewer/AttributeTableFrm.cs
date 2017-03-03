@@ -12,7 +12,7 @@ using ESRI.ArcGIS.Geometry;
 using System.Text.RegularExpressions; //为了应用isnumber函数 调用的库
 using System.Collections;
 
-namespace TestDemo
+namespace AlgorithmTest
 {
     public partial class AttributeTableFrm : Form
     {

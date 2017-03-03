@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TestDemo.Properties {
+namespace AlgorithmTest.Properties {
     using System;
     
     

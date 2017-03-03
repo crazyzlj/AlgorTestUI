@@ -1,4 +1,4 @@
-﻿namespace TestDemo
+﻿namespace AlgorithmTest
 {
     partial class HelpMessage
     {
@@ -37,7 +37,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::TestDemo.Properties.Resources.geo;
+            this.pictureBox2.Image = global::AlgorithmTest.Properties.Resources.geo;
             this.pictureBox2.Location = new System.Drawing.Point(312, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(60, 60);
@@ -46,7 +46,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::TestDemo.Properties.Resources._863prj;
+            this.pictureBox1.Image = global::AlgorithmTest.Properties.Resources._863prj;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(60, 60);

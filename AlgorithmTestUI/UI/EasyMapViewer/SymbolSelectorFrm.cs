@@ -10,7 +10,7 @@ using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.Display;
 using ESRI.ArcGIS.Carto;
 
-namespace TestDemo
+namespace AlgorithmTest
 {
     public partial class SymbolSelectorFrm : Form
     {

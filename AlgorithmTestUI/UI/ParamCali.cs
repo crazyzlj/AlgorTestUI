@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
-namespace TestDemo
+namespace AlgorithmTest
 {
     public partial class FormWuhui_calibration : Form
     {
@@ -18,8 +18,8 @@ namespace TestDemo
             public double[] QValue;
             public int count;
         }
-        public TestDemo.Hydrograph childHydroQ;
-        public TestDemo.Hydrograph childHydroS;
+        public AlgorithmTest.Hydrograph childHydroQ;
+        public AlgorithmTest.Hydrograph childHydroS;
         private string[] ParamCaliOutput;
         public string[] ParamCaliOutputProperty
         {
@@ -288,7 +288,7 @@ namespace TestDemo
             MinIdx[2] = Math.Abs((NashAll[(int)MinIdx[0]]-NashSelected)/NashSelected);
             return MinIdx;
         }
-        public void QorSHydrograh(int ColSelected,int RowIdx,string QorS,TestDemo.Hydrograph childHydro)
+        public void QorSHydrograh(int ColSelected,int RowIdx,string QorS,AlgorithmTest.Hydrograph childHydro)
         {
             int ParamNum = this.dataGridViewParamsCali.RowCount - 3;
             string[] ResultFilePaths = new string[4];
@@ -370,7 +370,7 @@ namespace TestDemo
             ResultFilePaths[2] = ParamCaliOutput[1] + "\\final_pop" + (MinIdx + 1).ToString() + "\\1_" + QorS + "_OUTLET.txt";
             if (childHydro == null || childHydro.IsDisposed)
             {
-                childHydro = new TestDemo.Hydrograph();
+                childHydro = new AlgorithmTest.Hydrograph();
                 childHydro.Files = ResultFilePaths;
                 childHydro.Show();
             }
