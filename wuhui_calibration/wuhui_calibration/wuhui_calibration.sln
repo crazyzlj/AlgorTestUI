@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wuhui_calibration", "wuhui_calibration\wuhui_calibration.csproj", "{94CF6FBF-79D2-4550-BE91-C267FF7CBC97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94CF6FBF-79D2-4550-BE91-C267FF7CBC97}.Debug|x86.ActiveCfg = Debug|x86
+		{94CF6FBF-79D2-4550-BE91-C267FF7CBC97}.Debug|x86.Build.0 = Debug|x86
+		{94CF6FBF-79D2-4550-BE91-C267FF7CBC97}.Release|x86.ActiveCfg = Release|x86
+		{94CF6FBF-79D2-4550-BE91-C267FF7CBC97}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

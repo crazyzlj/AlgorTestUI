@@ -1,0 +1,41 @@
+//Parameters for e-NSGAII
+#ALGORITHM PARAMETERS
+1			//the number of random seeds
+32	32	32	//Initial, min and max population sizes (multiple of 4)
+injection		//Population sizing scheme (scaling or injection)
+0.25			//Population scaling factor (integer for scaling, 0 to 1 for injection)
+100			//Maximum generations per run
+3200			//(32*100)Maximum number of function evaluations  4000
+2			//Number of objectives
+0.075	0.075		//Epsilon for each objective or 0 for each not used 
+0			//Number of constraints
+1.0			//Probability of crossover for real variables (pc: 0.6-1.0)*
+0.0333			//Probability of mutation for real variables (pm: 1/num.parmeters)*
+15			//Distribution index for SBX crossover (etac:5-20)*
+20			//Distribution index for polynomial mutation (etam:5-50)*
+0.5			//Probability of binary crossover: #
+0.5			//Probability of binary mutation: #
+1   10			//Inter-run termination criteria [0/1 (for true or false) | Delta(%)]
+1   10			//Intra-run termination criteria [0/1 (for true or false) | delta(%)]
+250   1   20 		//Lag window width
+
+#FILE OUTPUT: Format: 0/1(T/F) | generational interval (if applicable) | filename
+1   5   all_pop.out 		//Output all individuals 
+1   5   all_nondom_pop.out 	//Output all nondominated individuals 
+1        final_pop.out 		//Output all individuals in final population:
+1        final_nondom_pop.out	//Output all final nondominated individuals 
+1   1   stats.out			//Output run statistics and metric values 
+1        RS_stats.out 		//Output random seed summary:
+
+#PERFORMANCE METRICS (all the calculations need the reference set)
+0				//Convergence (0/1)->>need reference set :Deb (2002)
+0   133			//Diversity (0/1) | Diversity grid specification: 
+0   0.0075   0.0075	//e-performance (0/1) | e values for each objective
+0   0			//Unary e-Indicator (0/1) | Additive (0)/Multiplicative(1)?
+zdt1.ref			//Reference or target set filename ->> reference set
+
+#Model Interface
+Pardef.txt			//Parameter definition (include file path)
+Lyg_P			//imWEBs modePrj, file path include the watershed and model input file (database, etc)
+model_lyg_test_2013_storm		//modelname (project folder include model input and output file)
+1			// the thread number of the storm model
