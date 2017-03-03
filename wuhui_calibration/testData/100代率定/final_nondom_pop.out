@@ -1,4 +1,0 @@
-# This file contains the final non-dominated population.
-RS#	Cum.Gen	Index	Objective1	Objective2	Rank	CrowdingDistance	RealVar1	RealVar2	RealVar3	RealVar4	RealVar5	RealVar6	RealVar7
-0	100	1	-9.020939e-01	-8.831235e-01	1	1.644025e-02	1.367509e-01	1.867423e-01	2.284325e-01	2.370352e-01	2.316422e+00	1.002314e-04	8.514090e-01	
-0	100	2	-8.807551e-01	-9.086959e-01	1	5.193682e-02	1.793125e-01	2.898261e-01	2.236864e-01	8.319024e-01	9.360737e+00	1.004226e-04	8.505850e-01	

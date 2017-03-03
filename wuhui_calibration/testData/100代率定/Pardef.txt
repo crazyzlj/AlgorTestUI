@@ -1,9 +1,0 @@
-Name	Value	Minimum	Maximum	DoubleType	BinCode	ParEst	Bits
-Conductivity	-99.0	0.05	5.0	T	F	T	3
-Depression	-99.0	0.1	1.0	T	F	T	3
-Manning	-99.0	0.1	1.0	T 	F	T	3
-Omega	0.01	0.05	20.0	T	F	T	3
-ccoe	0.01	0.05	20.0	T	F	T	3
-spcon	0.0001	0.0001	0.01	T	F	T	3
-spexp	0.15	0.85	1.85	T	F	T	3
-	

@@ -1,3 +1,0 @@
-# This file contains a summary of the statistics and performance metric results for the random seed analysis.
-RS#	Seed	Run	Cum.Gen	Popsize	Archive	NFE	Time(sec)
-    0	-0.001	    5	    100	     32	      2	      3200	3160.536965
